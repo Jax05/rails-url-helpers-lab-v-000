@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   # Had to include this route in resources for prefix to set properly.
   get "students/:id", to: "students#show", as: 'student'
+  get "students/:id/activate", to: "students#activate", as: 'activate_student'
 end
