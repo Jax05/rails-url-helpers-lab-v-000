@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :students, only: [:index, :show] do
-    resources :activate
+    resources :activate, only: :index
   end
 
   # This show route can be refactored into the above resources method call, like so:
