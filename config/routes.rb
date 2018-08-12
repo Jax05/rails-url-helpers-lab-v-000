@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :students, only: [:index, :show] do
-    resources :activate, only: :index
-  end
+  resources :students, only: :index
 
   # This show route can be refactored into the above resources method call, like so:
   # resources :students, only: [:index, :show]
@@ -9,5 +7,5 @@ Rails.application.routes.draw do
   # the route, we'll keep it explicit for now and refactor later.
 
   # Had to include this route in resources for prefix to set properly.
-  # get "students/:id", to: "students#show"
+  get "students/:id", to: "students#show", as: 'student'
 end
